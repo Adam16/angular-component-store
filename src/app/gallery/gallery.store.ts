@@ -12,8 +12,9 @@ export class GalleryStore extends ComponentStore<GalleryState> {
   constructor() {
     // set defaults
     super({
-      media: [],
+      media: ['223423', '35235235'],
       idle: true,
+      activeMediaId: '223423',
     });
   }
 
