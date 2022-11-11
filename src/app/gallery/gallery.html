@@ -1,1 +1,5 @@
-<div class="container" *ngIf="vm$ | async as vm">{{vm.mediaCount}}</div>
+<div class="container" *ngIf="vm$ | async as vm">
+  {{vm.mediaCount}}
+
+  <h2>{{vm.idle ? 'YES' : 'NO'}}</h2>
+</div>

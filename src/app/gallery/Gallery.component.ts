@@ -15,5 +15,18 @@ import { GalleryStore } from './gallery.store';
 export class GalleryComponent {
   readonly vm$ = this.galleryStore.vm$;
 
-  constructor(private readonly galleryStore: GalleryStore) {}
+  constructor(private readonly galleryStore: GalleryStore) {
+    this.galleryStore.setIdle(false);
+    setTimeout(() => {
+      this.galleryStore.setMedia(['asdad']);
+    }, 5000);
+
+    setTimeout(() => {
+      this.galleryStore.setIdle(true);
+    }, 2000);
+
+    this.vm$.subscribe(({ idle }) => {
+      console.log(idle);
+    });
+  }
 }
